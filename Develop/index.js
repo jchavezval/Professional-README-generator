@@ -1,51 +1,76 @@
 // TODO: Include packages needed for this application
-const inquirer = require('inquirer');
 const fs = require('fs');
+const inquirer = require('inquirer');
 const generateMarkdown = require('./utils/generateMarkdown.js');
 
 // TODO: Create an array of questions for user input
-const questions = () => {
+
+const questions = readmeData => {
     return inquirer.prompt([
-        {
-            type: 'input',
-            name: 'name',
-            message:'Enter your First and Last Name:'
-        },
         { 
             type: 'input',
             name: 'project',
-            message: 'What is the name of your project?'
+            message: 'What is the name of your project? (Required)',
+            validate: projectInput => {
+                if (projectInput) {
+                    return true;
+                } else {
+                    console.log('You need to enter your project name');
+                    return false;
+                }
+            }
         },
         {
             type: 'input',
             name: 'github',
-            message: 'Enter your GitHub Username'
-          },
-          {
+            message: 'Enter your GitHub Username (Required)',
+            validate: githubInput => {
+                if (githubInput) {
+                    return true;
+                } else {
+                    console.log('Please enter your GitHub username!');
+                    return false;
+                }
+            }
+        },
+        {
             type: 'input',
-            name: 'about',
-            message: 'Provide a description of your project.'
-          },
-          {
+            name: 'description',
+            message: 'Provide a description of the project (Required)',
+            validate: descriptionInput => {
+                if (descriptionInput) {
+                    return true;
+                } else {
+                    console.log('You need to enter a project description!');
+                    return false;
+                }
+            }
+        },     
+        {
             type: 'checkbox',
             name: 'languages',
-            message: 'What did you build this project with? (Check all that apply)',
+            message: 'What languages did you use to build this project? (Check all that apply)',
             choices: ['JavaScript', 'HTML', 'CSS', 'ES6', 'jQuery', 'Bootstrap', 'Node']
-          },
-          {
+        },
+        {
             type: 'input',
             name: 'link',
-            message: 'Enter the GitHub link to your project. (Required)'
-          },
-        {
-            type: 'confirm',
-            name: 'confirmAddProject',
-            message: 'Would you like to enter another project?',
-            default: false
-          }
-    ]);
+            message: 'Enter the GitHub link to your project. (Required)',
+            validate: linkInput => {
+                if (linkInput) {
+                return true;
+                } else {
+                    console.log('You need to enter a project GitHub link!');
+                    return false;
+                }
+            }
+        },
+    ])
 };
-
+questions()
+    .then(readmeData => {
+        console.log(readmeData);
+    });
 
 // TODO: Create a function to write README file
 function writeToFile('README.md',  data) {}
