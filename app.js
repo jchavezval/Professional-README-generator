@@ -2,11 +2,11 @@
 
 const inquirer = require('inquirer');
 const generateReadMe = require('./src/ReadMe-template.js');
-const writeReadMe = require('/.utils/generateReadMe.js');
+const writeReadMe = require('./utils/generateReadMe.js');
 const licenses = require('./utils/licenses.js');
 
 const licenseName = (licenses) => {
-    list = license.map((obj = obj => obj.name));
+    list = licenses.map((obj = obj => obj.name));
     return list;
 }
 
@@ -67,10 +67,10 @@ const promptUser = () => {
             }
         },     
         {
-            type: 'checkbox',
-            name: 'languages',
-            message: 'What languages did you use to build this project? (Check all that apply) (Press <space> to select, <a> to toggle all, <i> to invert selection',
-            choices: ['JavaScript', 'HTML', 'CSS', 'ES6', 'jQuery', 'Bootstrap', 'Node']
+            type: 'list',
+            name: 'license',
+            message: "Please choose a license",
+            choices: licenseName(licenses)
         },
         {
             type: 'input',

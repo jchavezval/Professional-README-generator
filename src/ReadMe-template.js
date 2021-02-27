@@ -18,7 +18,7 @@ return literal;
 };
 
 module.exports = (promptData) => {
-    const { projectName, gitHub, email, description, languages, deployedLink, installationInstructions, usageInstructions} = promptData;
+    const { projectName, gitHub, email, description, license, deployedLink, installationInstructions, usageInstructions} = promptData;
 return `# ${projectName}
 
 ${licenseBadge(license)}
@@ -26,7 +26,7 @@ ${licenseBadge(license)}
 <a href = "#description"></a>
 ## Description
 ${description}
-${deployedLink(confirmDeployed, deployedAppLink)}
+${deployedLink}
 ## Table of Contents
   - [Description](#description)
   - [Installation](#installation)
@@ -38,26 +38,18 @@ ${deployedLink(confirmDeployed, deployedAppLink)}
   - [Questions](#questions)
 <a href = "#installation"></a>
 ## Installation
-${installation}
+${installationInstructions}
 <a href = "#usage"></a>
 ## Usage
-${usage}
+${usageInstructions}
 <a href = "#credits"></a>
 ## Credits
 - [${gitHub}](https://github.com/${gitHub})
-${listContributors(credits)}
+${listContributors}
 <a href = "#license"></a>
 ## License
 ${license}
 <a href = "#contributing"></a>
-## Contributing Guide Lines
-${guideLines}
-<a href = "#tests"></a>
-## Tests
-${test}
-<a href = "questions"></a>
-## Questions
-Feel free to reach out with any question you have about ${projectName}!
 ### Contact information:
 - GitHub: [${gitHub}](https://www.github.com/${gitHub})
 - Email: [${email}](mailto:${email})
