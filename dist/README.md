@@ -1,44 +1,43 @@
-# js
-
-undefined
-
-<a href = "#description"></a>
-## Description
-js
-js
-## Table of Contents
-  - [Description](#description)
-  - [Installation](#installation)
-  - [Usage](#usage)
-  - [Credits](#credits)
-  - [License](#license)
-  - [Tests](#tests)
-  - [Contributing Guide Lines](#contributing)
-  - [Questions](#questions)
-<a href = "#installation"></a>
-## Installation
-js
-<a href = "#usage"></a>
-## Usage
-js
-<a href = "#credits"></a>
-## Credits
-- [js](https://github.com/js)
-arr => {
-    let list =[];
-for (i=0; i < arr.length - 1; i++) {
-    let item = `[${arr[i].contributorsGitHub}](https://github.com/${arr[i].contributorsGitHub})`
-    list.push(item);
-} if (list.length === 0) {
-    return "";
-}
-let literal = "- " + list.join(`- `);
-return literal;
-}
-<a href = "#license"></a>
-## License
-Academic Free License v3.0
-<a href = "#contributing"></a>
-### Contact information:
-- GitHub: [js](https://www.github.com/js)
-- Email: [js](mailto:js)
+# Task Tracker
+  <div style="position: absolute; top: 22px; right: 50px">
+  ![licence: Artistic license 2.0](https://img.shields.io/badge/license-Artistic%20license%202.0-blue)
+  </div>
+  <a href = "#description"></a>
+  ## Description
+  Task Tracker is an app that helps you keep track of your different tasks for the day
+  
+  ## Table of Contents
+    - [Description](#description)
+    - [Installation](#installation)
+    - [Usage](#usage)
+    - [Credits](#credits)
+    - [License](#license)
+    - [Tests](#tests)
+    - [Contributing Guide Lines](#contributing)
+    - [Questions](#questions)
+  <a href = "#installation"></a>
+  ## Installation
+  install npm
+  <a href = "#usage"></a>
+  ## Usage
+  node app
+  <a href = "#credits"></a>
+  ## Credits
+  - [jchavezval](https://github.com/jchavezval)
+  - [jchavezval2](https://github.com/jchavezval2)
+  <a href = "#license"></a>
+  ## License
+  Artistic license 2.0
+  <a href = "#contributing"></a>
+  ## Contributing Guide Lines
+  npm i
+  <a href = "#tests"></a>
+  ## Tests
+  don't forget to install node
+  <a href = "questions"></a>
+  ## Questions
+  Feel free to reach out with any question you have about Task Tracker!
+  ### Contact information:
+  - GitHub: [jchavezval](https://www.github.com/jchavezval)
+  - Email: [jmchv2001@gmail.com](mailto:jmchv2001@gmail.com)
+  

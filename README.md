@@ -30,7 +30,8 @@ Clone this repo to use readme-generator on your machine.
 ## Usage
 - From the root directory "readme-generator" run the command "node app". 
 - You will then be shown a series of prompts. Make sure to answer all of them!
-- Once you have finished answering the prompts your high quality README.md file will be located in the dist directory 
+- Once you have finished answering the prompts your high quality README.md file will be located in the dist directory
+- See walkthrough video here: (https://drive.google.com/file/d/152CNruoZl4IqymStSLSQ48poyNvOM3qD/view)
 
 <a href = "#credits"></a>
 ## Credits
